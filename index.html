@@ -34,5 +34,48 @@
         console.log(tblDisplay);
       }
     </script>
+
+    <script>
+      let gender = prompt("Enter your gender (M, m, F, f, G, g): ");
+      let race = " nigga!";
+
+      switch (gender) {
+        case "M":
+          alert("You are male");
+          break;
+        case "m":
+          alert("You are male");
+          break;
+        case "F":
+          alert("You are female");
+          break;
+        case "f":
+          alert("You are female");
+          break;
+        case "G":
+          alert("You are gay" + race);
+          break;
+        case "g":
+          alert("You are gay" + race);
+          break;
+        default:
+          alert("Invalid input");
+      }
+    </script>
+
+    <script>
+      let age = Number(prompt("Enter your age: "));
+
+      if (age >= 18) {
+        alert("You are an adult");
+        alert("Your age is: " + age);
+      } else if (age >= 13 && age <= 17) {
+        alert("You are teen");
+        alert("Your age is: " + age);
+      } else {
+        alert("You are young");
+        alert("Your age: " + age);
+      }
+    </script>
   </body>
 </html>
