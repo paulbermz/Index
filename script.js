@@ -33,8 +33,9 @@
 //   console.log(tblDisplay);
 // }
 
-{
-  /* <body>
+// {
+/* <body>
+</script>
   <input type="text" id="txtNum1" placeholder="Enter first number" />
   <br />
   <br />
@@ -55,4 +56,4 @@
     }
   </script>
   </body> */
-}
+//   }
