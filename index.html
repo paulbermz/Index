@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="txtRows" placeholder="Enter columns" /> <br />
+    <br />
+    <input type="text" id="txtCols" placeholder="Enter rows" /> <br />
+    <br />
+    <button onclick="displayOutput()">Submit</button> <br />
+    <br />
+    <table id="tblGenerate" border="1"></table>
+
+    <script>
+      let txtRows = document.getElementById("txtRows");
+      let txtCols = document.getElementById("txtCols");
+      let tblGenerate = document.getElementById("tblGenerate");
+      let tblDisplay = "";
+
+      function displayOutput() {
+        let tblDisplay = "";
+
+        for (let outer = 1; outer <= Number(txtRows.value); outer++) {
+          tblDisplay += "<tr>";
+          for (let inner = 1; inner <= Number(txtCols.value); inner++) {
+            tblDisplay += "<td>" + inner + "</td>";
+          }
+          tblDisplay += "</tr>";
+        }
+        tblGenerate.innerHTML = tblDisplay;
+        console.log(tblDisplay);
+      }
+    </script>
+  </body>
+</html>
