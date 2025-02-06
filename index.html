@@ -388,5 +388,314 @@
       // }
       // alert(output);
     </script>
+<!--     <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Property Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Real Estate Property Management</h1>
+
+      <div class="form-group">
+        <label for="propertyName">Property Name:</label>
+        <input type="text" id="propertyName" />
+      </div>
+
+      <div class="form-group">
+        <label for="propertyType">Property Type:</label>
+        <select id="propertyType">
+          <option value="Detached">Detached</option>
+          <option value="Semi Detached">Semi Detached</option>
+          <option value="Town House">Town House</option>
+          <option value="Apartment">Apartment</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="propertySize">Size (sqm):</label>
+        <input type="number" id="propertySize" min="1" />
+      </div>
+
+      <div class="form-group">
+        <label for="propertyAmenities">Amenities:</label>
+        <input
+          type="text"
+          id="propertyAmenities"
+          placeholder="e.g. Pool, Garage"
+        />
+      </div>
+
+      <button onclick="addProperty()">Add Property</button>
+      <button onclick="clearProperties()">Clear List</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Size (sqm)</th>
+            <th>Amenities</th>
+            <th>Price (₱)</th>
+          </tr>
+        </thead>
+        <tbody id="propertyTable"></tbody>
+      </table>
+    </div>
+
+    <script>
+      let properties = []; // Array to store property objects
+
+      // Function to add a property
+      function addProperty() {
+        let name = document.getElementById("propertyName").value;
+        let type = document.getElementById("propertyType").value;
+        let size = document.getElementById("propertySize").value;
+        let amenities = document.getElementById("propertyAmenities").value;
+
+        // Validation using switch statement
+        let isValid = false;
+        switch (true) {
+          case name.trim() === "":
+            alert("Please enter a property name.");
+            break;
+          case size.trim() === "" || isNaN(size) || size <= 0:
+            alert("Please enter a valid size (greater than 0).");
+            break;
+          default:
+            isValid = true;
+        }
+
+        if (!isValid) return;
+
+        size = parseInt(size);
+
+        // Price calculation
+        let basePrice = 1000000; // Base price for all properties
+        let extraCost = size >= 25 ? 300000 : 0; // Additional cost for large properties
+        let totalPrice = basePrice + extraCost;
+
+        // Create property object
+        let property = {
+          name: name,
+          type: type,
+          size: size,
+          amenities: amenities,
+          price: totalPrice,
+        };
+
+        properties.push(property);
+        displayProperties();
+        clearForm();
+      }
+
+      // Function to display properties in the table
+      function displayProperties() {
+        let table = document.getElementById("propertyTable");
+        table.innerHTML = ""; // Clear table
+
+        for (let i = 0; i < properties.length; i++) {
+          let row = `<tr>
+            <td>${properties[i].name}</td>
+            <td>${properties[i].type}</td>
+            <td>${properties[i].size}</td>
+            <td>${properties[i].amenities}</td>
+            <td>₱${properties[i].price.toLocaleString()}</td>
+        </tr>`;
+          table.innerHTML += row;
+        }
+      }
+
+      // Function to clear the form inputs
+      function clearForm() {
+        document.getElementById("propertyName").value = "";
+        document.getElementById("propertyType").value = "Detached";
+        document.getElementById("propertySize").value = "";
+        document.getElementById("propertyAmenities").value = "";
+      }
+
+      // Function to clear all properties
+      function clearProperties() {
+        let confirmClear = confirm(
+          "Are you sure you want to clear all properties?"
+        );
+        if (confirmClear) {
+          properties = []; // Empty the array
+          displayProperties(); // Refresh the table
+        }
+      }
+    </script>
+  </body>
+</html> -->
+
+
+
+
+    <script>
+//       // Working with Numbers in JavaScript
+// let num1 = 5.6789;
+// let num2 = 10;
+
+// console.log("Original Number:", num1);
+// console.log("Rounded (toFixed(2)):", num1.toFixed(2)); // Output: 5.68
+// console.log("Square Root:", Math.sqrt(num2)); // Output: 3.1622
+// console.log("Power (2^3):", Math.pow(2, 3)); // Output: 8
+// console.log("Random Number (0-100):", Math.floor(Math.random() * 100));
+
+
+
+//       // String Manipulation
+// let text = "Hello, JavaScript!";
+// console.log("Original Text:", text);
+// console.log("Length:", text.length);
+// console.log("Uppercase:", text.toUpperCase());
+// console.log("Substring (0-5):", text.substring(0, 5));
+
+// // Checking for NaN (Not a Number)
+// let value = "123a";
+// console.log("Is NaN?", isNaN(value)); // Output: true
+
+
+
+//       // Object Literal with Methods
+// let person = {
+//     name: "John Doe",
+//     age: 25,
+//     address: "Manila",
+//     greet: function() {
+//         return "Hello, my name is " + this.name;
+//     }
+// };
+
+// console.log(person.greet()); // Output: Hello, my name is John Doe
+// console.log("Age:", person.age);
+// console.log("Address:", person.address);
+
+
+//       // Looping through object properties
+// let student = {
+//     name: "Alice",
+//     grade: "A",
+//     course: "IT"
+// };
+
+// console.log("Student Details:");
+// for (let key in student) {
+//     console.log(key + ": " + student[key]);
+// }
+
+
+
+//       // Constructor Function
+// function Car(brand, model, year) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.year = year;
+//     this.getDetails = function() {
+//         return `${this.brand} ${this.model} (${this.year})`;
+//     };
+// }
+
+// // Creating new objects
+// let car1 = new Car("Toyota", "Corolla", 2022);
+// let car2 = new Car("Honda", "Civic", 2023);
+
+// console.log(car1.getDetails()); // Output: Toyota Corolla (2022)
+// console.log(car2.getDetails()); // Output: Honda Civic (2023)
+
+
+//       <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>DOM Manipulation</title>
+// </head>
+// <body>
+//     <h1 id="title">Hello, JavaScript!</h1>
+//     <button onclick="changeText()">Click Me</button>
+
+//     <script>
+//         function changeText() {
+//             document.getElementById("title").textContent = "Text Changed!";
+//         }
+//    
+// </body>
+// </html>
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Real Estate Listing</title>
+// </head>
+// <body>
+//     <h1>Property Listing</h1>
+//     <input type="text" id="propName" placeholder="Property Name">
+//     <input type="number" id="propSize" placeholder="Size in sqm">
+//     <button onclick="addProperty()">Add Property</button>
+//     <ul id="propertyList"></ul>
+  
+//         let properties = [];
+
+//         function addProperty() {
+//             let name = document.getElementById("propName").value;
+//             let size = document.getElementById("propSize").value;
+//             let price = size >= 25 ? 1300000 : 1000000;
+
+//             let property = { name, size, price };
+//             properties.push(property);
+//             displayProperties();
+//         }
+
+//         function displayProperties() {
+//             let list = document.getElementById("propertyList");
+//             list.innerHTML = "";
+//             for (let prop of properties) {
+//                 let li = document.createElement("li");
+//                 li.textContent = `${prop.name} - ${prop.size} sqm - ₱${prop.price}`;
+//                 list.appendChild(li);
+//             }
+//         }
+//     
+    </script>
+
+
+    </script>
+
   </body>
 </html>
