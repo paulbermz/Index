@@ -938,6 +938,234 @@
 // } -->
 
     </script>
+  <script>
+//     <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>Dynamic Calendar Generator</title>
+//     <style>
+//       body {
+//         font-family: Arial, sans-serif;
+//         text-align: center;
+//         margin: 20px;
+//       }
+//       .container {
+//         max-width: 600px;
+//         margin: auto;
+//       }
+//       table {
+//         width: 100%;
+//         border-collapse: collapse;
+//         margin-top: 20px;
+//       }
+//       table,
+//       th,
+//       td {
+//         border: 1px solid black;
+//       }
+//       th,
+//       td {
+//         padding: 10px;
+//         text-align: center;
+//       }
+//       th {
+//         background-color: lightgray;
+//       }
+//       td {
+//         cursor: pointer;
+//       }
+//       .selected {
+//         background-color: yellow;
+//       }
+//     </style>
+//   </head>
+//   <body>
+//     <div class="container">
+//       <h1>Dynamic Calendar Generator</h1>
 
+//       <label for="monthSelect">Select Month:</label>
+//       <select id="monthSelect">
+//         <option value="0">January</option>
+//         <option value="1">February</option>
+//         <option value="2">March</option>
+//         <option value="3">April</option>
+//         <option value="4">May</option>
+//         <option value="5">June</option>
+//         <option value="6">July</option>
+//         <option value="7">August</option>
+//         <option value="8">September</option>
+//         <option value="9">October</option>
+//         <option value="10">November</option>
+//         <option value="11">December</option>
+//       </select>
+
+//       <label for="daySelect">Select Start Day:</label>
+//       <select id="daySelect">
+//         <option value="0">Sunday</option>
+//         <option value="1">Monday</option>
+//         <option value="2">Tuesday</option>
+//         <option value="3">Wednesday</option>
+//         <option value="4">Thursday</option>
+//         <option value="5">Friday</option>
+//         <option value="6">Saturday</option>
+//       </select>
+
+//       <button onclick="generateCalendar()">Generate Calendar</button>
+
+//       <h2>Calendar</h2>
+//       <table id="calendarTable">
+//         <thead>
+//           <tr id="dayHeaders"></tr>
+//         </thead>
+//         <tbody id="calendarBody"></tbody>
+//       </table>
+//     </div>
+//   </body>
+// </html>
+
+
+
+
+// JS CODE
+// // Function to get the number of days in a month using switch statement
+// function getDaysInMonth(month) {
+//   switch (month) {
+//     case 1:
+//       return 28;
+//     case 3:
+//     case 5:
+//     case 8:
+//     case 10:
+//       return 30;
+//     default:
+//       return 31;
+//   }
+// }
+
+// // Function to get the name of a month using switch statement
+// function getMonthName(month) {
+//   switch (month) {
+//     case 0:
+//       return "January";
+//     case 1:
+//       return "February";
+//     case 2:
+//       return "March";
+//     case 3:
+//       return "April";
+//     case 4:
+//       return "May";
+//     case 5:
+//       return "June";
+//     case 6:
+//       return "July";
+//     case 7:
+//       return "August";
+//     case 8:
+//       return "September";
+//     case 9:
+//       return "October";
+//     case 10:
+//       return "November";
+//     case 11:
+//       return "December";
+//   }
+// }
+
+// // Function to get the name of a day using switch statement
+// function getDayName(day) {
+//   switch (day) {
+//     case 0:
+//       return "Sunday";
+//     case 1:
+//       return "Monday";
+//     case 2:
+//       return "Tuesday";
+//     case 3:
+//       return "Wednesday";
+//     case 4:
+//       return "Thursday";
+//     case 5:
+//       return "Friday";
+//     case 6:
+//       return "Saturday";
+//   }
+// }
+
+// // Function to generate the calendar
+// function generateCalendar() {
+//   let month = parseInt(document.getElementById("monthSelect").value);
+//   let startDay = parseInt(document.getElementById("daySelect").value);
+//   let daysInMonth = getDaysInMonth(month);
+
+//   let calendarBody = document.getElementById("calendarBody");
+//   let dayHeaders = document.getElementById("dayHeaders");
+
+//   // Clear previous table data
+//   calendarBody.innerHTML = "";
+//   dayHeaders.innerHTML = "";
+
+//   // Create table headers (days of the week)
+//   for (let i = 0; i < 7; i++) {
+//     let th = document.createElement("th");
+//     th.textContent = getDayName(i);
+//     dayHeaders.appendChild(th);
+//   }
+
+//   let row = document.createElement("tr");
+//   let currentDay = 1;
+
+//   // Fill empty cells before the first day
+//   for (let i = 0; i < startDay; i++) {
+//     let emptyCell = document.createElement("td");
+//     row.appendChild(emptyCell);
+//   }
+
+//   // Generate days of the month
+//   for (let i = startDay; i < 7; i++) {
+//     let cell = document.createElement("td");
+//     cell.textContent = currentDay;
+//     cell.onclick = function () {
+//       selectDay(this);
+//     };
+//     row.appendChild(cell);
+//     currentDay++;
+//   }
+
+//   calendarBody.appendChild(row);
+
+//   // Generate remaining rows using nested loops
+//   while (currentDay <= daysInMonth) {
+//     row = document.createElement("tr");
+
+//     for (let i = 0; i < 7; i++) {
+//       if (currentDay > daysInMonth) {
+//         break;
+//       }
+//       let cell = document.createElement("td");
+//       cell.textContent = currentDay;
+//       cell.onclick = function () {
+//         selectDay(this);
+//       };
+//       row.appendChild(cell);
+//       currentDay++;
+//     }
+
+//     calendarBody.appendChild(row);
+//   }
+// }
+
+// // Function to highlight the selected day
+// function selectDay(cell) {
+//   if (cell.classList.contains("selected")) {
+//     cell.classList.remove("selected");
+//   } else {
+//     cell.classList.add("selected");
+//   }
+// }
+
+  </script>
   </body>
 </html>
