@@ -1236,6 +1236,132 @@
 //   </body>
 // </html>
 
+//       <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>Document</title>
+//     <style>
+//       body {
+//         font-family: Arial, sans-serif;
+//         margin: 20px;
+//       }
+
+//       input {
+//         border-color: rgb(0, 0, 0);
+//         padding: 5px;
+//         font-size: 14px;
+//       }
+
+//       table {
+//         width: 100%;
+//         border-collapse: collapse;
+//         margin-top: 20px;
+//       }
+//       th,
+//       td {
+//         border: 1px solid black;
+//         padding: 10px;
+//         text-align: left;
+//       }
+//       th {
+//         background-color: #f2f2f2;
+//       }
+//     </style>
+//   </head>
+//   <body>
+//     <div class="input">
+//       <label>NAME:</label>
+//       <input type="text" id="txtName" placeholder="Enter your name" /> <br />
+//       <br />
+//       <label>AGE:</label>
+//       <input type="number" id="txtAge" placeholder="Enter your age" /> <br />
+//       <br />
+//       <label>EMAIL:</label>
+//       <input type="text" id="txtEmail" placeholder="Enter your email" /> <br />
+//       <br />
+//       <button onclick="addPerson()">SUBMIT</button> <br />
+//       <br />
+//     </div>
+
+//     <table border="1px">
+//       <thead>
+//         <tr>
+//           <td>NAME</td>
+//           <td>AGE</td>
+//           <td>AGE CATEGORY</td>
+//           <td>EMAIL</td>
+//           <td>ACTION</td>
+//         </tr>
+//       </thead>
+//       <tbody id="tblPerson">
+//         <!-- populate rows -->
+//       </tbody>
+//     </table>
+//     <script src="Person.js"></script
+//     <script>
+//       let personArray = [];
+//       let txtName = document.getElementById("txtName");
+//       let txtAge = document.getElementById("txtAge");
+//       let txtEmail = document.getElementById("txtEmail");
+//       let tblPerson = document.getElementById("tblPerson");
+
+//       function addPerson() {
+//         let person = new Person(txtName.value, txtAge.value, txtEmail.value);
+//         personArray.push(person);
+//         console.log(personArray);
+
+//         displayTable();
+
+//         txtName.value = "";
+//         txtAge.value = "";
+//         txtEmail.value = "";
+//       }
+
+//       function displayTable() {
+//         tblPerson.innerHTML = "";
+//         let rowHTML = "";
+//         personArray.forEach((element, index) => {
+//           rowHTML += `<tr>
+//                                 <td>${element.name}</td>
+//                                 <td>${element.age}</td>
+//                                 <td>${element.getAgeCategory()}</td>
+//                                 <td>${element.email}</td>
+//                                 <td><button onclick = "deletePerson(${index})"> DELETE </button></td>
+//                             </tr>`;
+//         });
+
+//         tblPerson.innerHTML = rowHTML;
+//       }
+
+//       function deletePerson(index) {
+//         personArray.splice(index, 1);
+//         console.log(personArray);
+//         displayTable();
+//       }
+//     </script
+//   </body>
+// </html>
+
+      // Person.js
+//       function Person(name, age, email) {
+//   this.name = name;
+//   this.age = age;
+//   this.email = email;
+
+//   this.getAgeCategory = function () {
+//     if (this.age > 0 && this.age < 18) {
+//       return "MINOR";
+//     } else if (this.age >= 18 && this.age < 65) {
+//       return "ADULT";
+//     } else {
+//       return "SENIOR";
+//     }
+//   };
+// }
+
+
     </script>
   </body>
 </html>
