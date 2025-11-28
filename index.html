@@ -16,72 +16,7 @@
 
     <script>
       // https://drive.google.com/drive/folders/1xRJqZwF6PF__Fm6jN1tUdvwkzhvPJRpY?usp=sharing
-      let txtRows = document.getElementById("txtRows");
-      let txtCols = document.getElementById("txtCols");
-      let tblGenerate = document.getElementById("tblGenerate");
-      let tblDisplay = "";
-
-      function displayOutput() {
-        let tblDisplay = "";
-    
-        for (let outer = 1; outer <= Number(txtRows.value); outer++) {
-          tblDisplay += "<tr>";
-          for (let inner = 1; inner <= Number(txtCols.value); inner++) {
-            tblDisplay += "<td>" + inner + "</td>";
-          }
-          tblDisplay += "</tr>";
-        }
-        tblGenerate.innerHTML = tblDisplay;
-        console.log(tblDisplay);
-      }
     </script>
-
-    <script>
-      let gender = prompt("Enter your gender (M, m, F, f, G, g): ");
-      let race = " nigga!";
-
-      switch (gender) {
-        case "M":
-          alert("You are male");
-          break;
-        case "m":
-          alert("You are male");
-          break;
-        case "F":
-          alert("You are female");
-          break;
-        case "f":
-          alert("You are female");
-          break;
-        case "G":
-          alert("You are gay" + race);
-          break;
-        case "g":
-          alert("You are gay" + race);
-          break;
-        default:
-          alert("Invalid input");
-      }
-    </script>
-
-    <script>
-      let age = Number(prompt("Enter your age: "));
-
-      if (age >= 18) {
-        alert("You are an adult");
-        alert("Your age is: " + age);
-      } else if (age >= 13 && age <= 17) {
-        alert("You are teen");
-        alert("Your age is: " + age);
-      } else {
-        alert("You are young");
-        alert("Your age: " + age);
-      }
-    </script>
-
-    <script>
-      
-
  <!DOCTYPE html>
 <html lang="en">
   <head>
